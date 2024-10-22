@@ -1,0 +1,43 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      husky:
+        specifier: ^9.1.6
+        version: 9.1.6
+      nodemailer:
+        specifier: ^6.9.15
+        version: 6.9.15
+    devDependencies:
+      git-format-staged:
+        specifier: ^3.1.1
+        version: 3.1.1
+
+packages:
+
+  git-format-staged@3.1.1:
+    resolution: {integrity: sha512-P749fkktaiAchFZKR7bgdvruzhvbcIDr1uRBrS9/Wdimb7wH1Twchz9gOixj8tUaHVMuXY/ckDojfOwV6AxgPA==}
+    hasBin: true
+
+  husky@9.1.6:
+    resolution: {integrity: sha512-sqbjZKK7kf44hfdE94EoX8MZNk0n7HeW37O4YrVGCF4wzgQjp+akPAkfUK5LZ6KuR/6sqeAVuXHji+RzQgOn5A==}
+    engines: {node: '>=18'}
+    hasBin: true
+
+  nodemailer@6.9.15:
+    resolution: {integrity: sha512-AHf04ySLC6CIfuRtRiEYtGEXgRfa6INgWGluDhnxTZhHSKvrBu7lc1VVchQ0d8nPc4cFaZoPq8vkyNoZr0TpGQ==}
+    engines: {node: '>=6.0.0'}
+
+snapshots:
+
+  git-format-staged@3.1.1: {}
+
+  husky@9.1.6: {}
+
+  nodemailer@6.9.15: {}
