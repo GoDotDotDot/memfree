@@ -67,6 +67,7 @@
         "next-contentlayer2": "^0.4.6",
         "next-intl": "^3.19.0",
         "next-themes": "^0.3.0",
+        "nodemailer": "^6.9.15",
         "postcss": "8.4.31",
         "react": "^18.3.1",
         "react-day-picker": "8.10.1",
@@ -84,6 +85,7 @@
         "sonner": "^1.4.41",
         "stripe": "^15.4.0",
         "typescript": "5.2.2",
+        "unist-util-visit": "^5.0.0",
         "uploadthing": "^6.7.0",
         "uuid": "^10.0.0",
         "vaul": "^0.9.1",
@@ -91,15 +93,14 @@
         "zustand": "^4.5.2"
     },
     "devDependencies": {
-        "autoprefixer": "10.4.15",
+        "@next/bundle-analyzer": "^14.2.12",
         "@tailwindcss/line-clamp": "^0.4.4",
         "@tailwindcss/typography": "^0.5.13",
-        "tailwindcss-animate": "^1.0.7",
-        "tailwind-merge": "^2.3.0",
+        "@types/google-one-tap": "^1.2.6",
         "@types/react": "18.2.21",
         "@types/react-dom": "18.2.14",
-        "@types/google-one-tap": "^1.2.6",
         "@vercel/style-guide": "^5.0.1",
+        "autoprefixer": "10.4.15",
         "dotenv": "^16.3.1",
         "eslint": "^8.52.0",
         "eslint-config-next": "^14.0.0",
@@ -114,8 +115,9 @@
         "rehype-slug": "^6.0.0",
         "remark": "^15.0.1",
         "remark-gfm": "^4.0.0",
+        "tailwind-merge": "^2.3.0",
         "tailwindcss": "^3.4.3",
-        "@next/bundle-analyzer": "^14.2.12"
+        "tailwindcss-animate": "^1.0.7"
     },
     "engines": {
         "node": ">=18.17.0"
