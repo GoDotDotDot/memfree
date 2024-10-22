@@ -5,7 +5,7 @@ import GitHub from 'next-auth/providers/github';
 import Google from 'next-auth/providers/google';
 import Resend from 'next-auth/providers/resend';
 import Credentials from 'next-auth/providers/credentials';
-import EmailProvider from 'next-auth/providers/nodemailer';
+import EmailProvider from 'next-auth/providers/email';
 
 import { UpstashRedisAdapter } from '@auth/upstash-redis-adapter';
 import { sendVerificationRequest } from '@/lib/auth/auth-sind-request';
