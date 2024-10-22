@@ -5,6 +5,8 @@ import GitHub from 'next-auth/providers/github';
 import Google from 'next-auth/providers/google';
 import Resend from 'next-auth/providers/resend';
 import Credentials from 'next-auth/providers/credentials';
+import EmailProvider from 'next-auth/providers/nodemailer';
+
 import { UpstashRedisAdapter } from '@auth/upstash-redis-adapter';
 import { sendVerificationRequest } from '@/lib/auth/auth-sind-request';
 import { NEXT_PUBLIC_APP_URL } from '@/lib/env';
@@ -36,9 +38,36 @@ export const config = {
     providers: [
         GitHub,
         Google,
-        Resend({
-            from: 'MemFree <email@email.memfree.me>',
-            sendVerificationRequest,
+        EmailProvider({
+            server: {
+                host: 'email-smtp.example.com',
+                port: 587,
+                auth: {
+                    user: 'user',
+                    pass: 'password',
+                },
+            },
+            from: 'no-reply@example.ai',
+            async sendVerificationRequest({ identifier: email, url, provider: { server, from } }) {
+                const allowedEmail = process.env.ALLOWED_EMAILS.split(',');
+                if (!allowedEmail.includes(email)) {
+                    throw new Error('Invalid email');
+                }
+                const res = await fetch(process.env.EMAIL_SERVER_URL, {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        to: email,
+                        subject: `Sign in to search AI`,
+                        html: url,
+                    }),
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': process.env.EMAIL_API_KEY,
+                    },
+                });
+
+                await res.json();
+            },
         }),
         Credentials({
             id: 'googleonetap',
