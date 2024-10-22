@@ -9,7 +9,7 @@ if (process.env.VECTOR_INDEX_HOST) {
 } else if (process.env.MEMFREE_HOST) {
     VECTOR_INDEX_HOST = `${process.env.MEMFREE_HOST}/vector`;
 } else {
-    throw new Error('Neither VECTOR_INDEX_HOST, VECTOR_HOST, nor MEMFREE_HOST is defined');
+    // throw new Error('Neither VECTOR_INDEX_HOST, VECTOR_HOST, nor MEMFREE_HOST is defined');
 }
 
 const memfreeHost = process.env.MEMFREE_HOST;
@@ -20,7 +20,7 @@ if (process.env.VECTOR_HOST) {
 } else if (memfreeHost) {
     VECTOR_HOST = `${memfreeHost}/vector`;
 } else {
-    throw new Error('Neither MEMFREE_HOST nor VECTOR_HOST is defined');
+    // throw new Error('Neither MEMFREE_HOST nor VECTOR_HOST is defined');
 }
 
 // Auth
