@@ -22,7 +22,7 @@ export function EmailForm() {
             }
 
             setSignInClicked(true);
-            signIn('email', { callbackUrl: '/', email: email }).then(() => {
+            signIn("resend", { callbackUrl: '/', email: email }).then(() => {
                 setSignInClicked(false);
             });
         } catch (error) {

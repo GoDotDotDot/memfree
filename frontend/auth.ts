@@ -5,7 +5,6 @@ import GitHub from 'next-auth/providers/github';
 import Google from 'next-auth/providers/google';
 import Resend from 'next-auth/providers/resend';
 import Credentials from 'next-auth/providers/credentials';
-import EmailProvider from 'next-auth/providers/email';
 
 import { UpstashRedisAdapter } from '@auth/upstash-redis-adapter';
 import { sendVerificationRequest } from '@/lib/auth/auth-sind-request';
@@ -38,16 +37,7 @@ export const config = {
     providers: [
         GitHub,
         Google,
-        EmailProvider({
-            server: {
-                host: 'email-smtp.example.com',
-                port: 587,
-                auth: {
-                    user: 'user',
-                    pass: 'password',
-                },
-            },
-            from: 'no-reply@example.ai',
+        Resend({
             async sendVerificationRequest({ identifier: email, url, provider: { server, from } }) {
                 const allowedEmail = process.env.ALLOWED_EMAILS.split(',');
                 if (!allowedEmail.includes(email)) {
