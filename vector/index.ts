@@ -306,6 +306,7 @@ async function handleRequest(req: Request): Promise<Response> {
 
 export const server = Bun.serve({
   port: process.env.PORT || 3000,
+  hostname: "0.0.0.0",
   fetch: handleRequest,
 });
 
