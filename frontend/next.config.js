@@ -33,6 +33,14 @@ const nextConfig = {
             },
         ],
     },
+    async rewrites() {
+        return [
+            {
+                source: '/vector/:path',
+                destination: 'http://embedding.dctx.link:3000/:path/',
+            },
+        ];
+    },
 };
 
 module.exports = withBundleAnalyzer(withNextIntl(withContentlayer(nextConfig)));
