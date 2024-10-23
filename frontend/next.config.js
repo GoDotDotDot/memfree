@@ -36,7 +36,7 @@ const nextConfig = {
     async rewrites() {
         return [
             {
-                source: '/vector/:path',
+                source: '/api/vector/:path',
                 destination: 'http://embedding.dctx.link:3000/:path/',
             },
         ];
