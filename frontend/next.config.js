@@ -37,7 +37,7 @@ const nextConfig = {
         return [
             {
                 source: '/api/vector/:path*',
-                destination: 'http://embedding.dctx.link:3001/:path*',
+                destination: 'http://embedding.dctx.link:3000:path*',
             },
         ];
     },
