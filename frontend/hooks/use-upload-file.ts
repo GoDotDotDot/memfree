@@ -11,7 +11,7 @@ export function useUploadFile() {
     const [isUploading, setIsUploading] = React.useState(false);
 
     const indexLocalFile = async (files: File[]) => {
-        const endpoint = `/api/vector/api/index/local-file`;
+        const endpoint = `${NEXT_PUBLIC_VECTOR_HOST}/api/index/local-file`;
         setIsUploading(true);
         try {
             const token = await getAuthToken();
