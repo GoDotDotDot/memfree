@@ -44,12 +44,18 @@ export async function POST(req: NextRequest) {
             return rateLimitResponse;
         }
     } else {
-        return NextResponse.json(
-            {
-                error: 'You need to sign in',
-            },
-            { status: 429 },
-        );
+        const token = req.headers.get('Authorization');
+        if (token === `Bearer ${process.env.SEARCH_API_TOKEN}`) {
+            userId = '47458946-df78-4ec4-86ad-a8a07467314d';
+            isPro = true;
+        } else {
+            return NextResponse.json(
+                {
+                    error: 'You need to sign in',
+                },
+                { status: 429 },
+            );
+        }
     }
     let { model, source, messages, profile } = await req.json();
 
